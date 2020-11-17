@@ -1,15 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Book
 
 # Create your views here.
 
-books =[
-    {
-        'title': 'Brief answer to the big questions',
-        'author': 'Stefen Hawking',
-        'Highlights': ''
-    }
-]
-
 def home(request):
-    return render(request, 'bookstore/home.html')
+    context = {
+        'posts': Book.objects.all()
+    }
+    return render(request, 'bookstore/home.html', context)
