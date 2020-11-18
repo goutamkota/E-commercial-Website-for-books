@@ -1,7 +1,21 @@
 {% extends "bookstore/base.html" %}
 {% block content %}
     {% for book in books %}
+    <div class="content-section">
+      <div class="media">
+        <img class="img-thumbnail" src="{{ book.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ book.title }}</h2>
+          <p class="text-secondary">
+            {{ book.author }} <br>
+            {{ book.genre }} <br>
+            {{ book.summary }} <br>
 
+        </p>
+        </div>
+      </div>
+      <!-- FORM HERE -->
+    </div>
     {% endfor %}
 {% endblock content %}
 

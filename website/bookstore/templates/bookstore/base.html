@@ -10,7 +10,6 @@
 
     
     <!-- searchBar goutam-->
-    <link rel="stylesheet" href="./searchBar.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>    
 
 
@@ -19,6 +18,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{% static 'bookstore/main.css' %}">
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'bookstore/searchBar.css' %}"> {% endcomment %}
 
     {% if title %}
         <title>Bookstore - {{ title }}</title>
@@ -38,9 +38,10 @@
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="#">Home</a>
               <a class="nav-item nav-link" href="#">About</a>
+            </div>
 
-      {% comment %} <!-- search-input goutam -->
-    <div class="wrapper">
+     <!-- search-input goutam -->
+    {% comment %} <div class="wrapper">
       <div class="search-input">
         <a href="" target="_blank" hidden></a>
         <input type="text" placeholder="Type to search..">
@@ -49,11 +50,10 @@
         </div>
         <div class="icon"><i class="fas fa-search"></i></div>
       </div>
-    </div>
-      <!-- end of search-input goutam --> {% endcomment %}
+    </div> {% endcomment %}
+      <!-- end of search-input goutam -->
 
               
-            </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
