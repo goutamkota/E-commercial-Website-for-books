@@ -1,0 +1,49 @@
+
+<header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4" href="{% url 'bookstore-home' %}">Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+          aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="#">Home</a>
+            <a class="nav-item nav-link" href="#">About</a>
+          </div>
+
+          <!-- search-input goutam -->
+          <div class="wrapper">
+            <div class="search-input">
+              <div class="search">
+                <select id="categories"></select>
+                <a href="" target="_blank" hidden></a>
+                <input type="text" placeholder="Type to search..">
+                <div class="icon"><i class="fas fa-search"></i></div>
+              </div>
+              <div class="autocom-box">
+                <!-- here list are inserted from javascript -->
+              </div>
+            </div>
+          </div>
+          <!-- end of search-input goutam -->
+
+
+          <!-- Navbar Right Side -->
+          <div class="navbar-nav">
+            {% if user.is_authenticated %}
+            
+            <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+            <a class="nav-item nav-link" href="{% url 'profile' %}"><i class="fas fa-shopping-cart"></i></a>
+            
+            {% else %}
+            <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+            <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </header>
