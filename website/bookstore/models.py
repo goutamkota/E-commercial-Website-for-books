@@ -6,6 +6,23 @@ from django_countries.fields import CountryField
 from users.models import Profile
 
 
+CATEGORY_CHOICES = (
+    ('F', 'Fiction'),
+    ('S', 'Science'),
+    ('N', 'Novel'),
+    ('H', 'History'),
+    ('HF', 'Historical-fiction'),
+    ('NF', 'Non-fiction'),
+    ('M', 'Mystery'),
+    ('P', 'Poetry'),
+    ('B', 'Biography'),
+    ('A', 'Autobiography'),
+    ('CL', 'Children-literature'),
+    ('P', 'Philosophy'),
+    ('SH', 'Self-help')
+)
+
+
 LABEL_CHOICES = (
     ('P', 'primary'),
     ('S', 'secondary'),
@@ -21,7 +38,7 @@ ADDRESS_CHOICES = (
 class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=50)
-    genre = models.CharField(max_length=20)
+    genre = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
     price = models.FloatField()
     discount_price = models.FloatField(blank=True, null=True)
     description = models.TextField()
@@ -34,8 +51,7 @@ class Book(models.Model):
 
 
 class OrderItem(models.Model):
-    user = models.ForeignKey(User,
-                             on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     ordered = models.BooleanField(default=False)
     item = models.ForeignKey(Book, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)

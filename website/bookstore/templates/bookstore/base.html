@@ -9,17 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-
-  <!-- searchBar goutam-->
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-  <!-- Additional styles PK-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <link href="{% static 'bookstore/css/bootstrap.min.css'%}" rel="stylesheet">
-  <link href="{% static 'bookstore/css/mdb.min.css'%}" rel="stylesheet">
-  <link href="{% static 'bookstore/css/style.min.css'%}" rel="stylesheet">
-  <!-- Additional styles PK-->
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -38,7 +27,7 @@
     body,
     header,
     .carousel {
-      height: 20vh;
+      height: 0vh;
     }
 
     @media (max-width: 740px) {
@@ -77,18 +66,14 @@
         <div class="alert alert-{{ message.tags }}">
           {{ message }}
         </div>
-        {% endfor %}
-        {% endif %}
-        {% block content %}
-        {% endblock %}
-
-        {% block extra_body %}
-        {% endblock %}
-
-        {% block extra_scripts %}
-        {% endblock extra_scripts %}
       </div>
     </div>
+
+    {% endfor %}
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
   </main>
 
   <!-- Optional JavaScript -->
@@ -108,21 +93,8 @@
   <script src="{% static 'bookstore/searchBar_suggestion_database.js' %}"></script>
   <script src="{% static 'bookstore/searchBar.js' %}"></script>
 
-
-  <!-- Additional styles PK-->
-  <script type="text/javascript" src="{% static 'bookstore/js/jquery-3.4.1.min.js' %}"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="{% static 'bookstore/js/popper.min.js' %}"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="{% static 'bookstore/js/bootstrap.min.js' %}"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="{% static 'bookstore/js/mdb.min.js' %}"></script>
-  <script type="text/javascript">
-  // Animations initialization
-  new WOW().init();
-
-</script>
-  <!-- Additional styles PK-->
+  <!-- searchBar goutam-->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 </body>
 
