@@ -38,9 +38,9 @@ def book_list(request):
     }
     return render(request, 'bookstore/book_list.html', context)
 
-class ItemDetailView(DetailView):
-    model = Book
-    template_name = "bookstore/product-detail.html"
+def ItemDetailView(request):
+
+    return render(request, 'bookstore/product-detail.html')
 
 
 
