@@ -17,16 +17,22 @@ h6 {
 ul {
     margin: 0;
 }
-
-
 /* navigation */
 
+.navbar {
+    height: 60px;
+
+}
+
 .bg-steel {
-    background-color: #5f788a;
+    background-color: #4b7592;
 }
 
 .site-header .navbar-nav .nav-link {
     color: #cbd5db;
+    font-family: ubuntu;
+    font-size: 2rem;
+    padding: 0% 30%;
 }
 
 .site-header .navbar-nav .nav-link:hover {
@@ -34,7 +40,8 @@ ul {
 }
 
 .site-header .navbar-nav .nav-link.active {
-    font-weight: 500;
+    font-weight: 900;
+    
 }
 
 .content-section {
@@ -42,7 +49,8 @@ ul {
     padding: 10px 20px;
     border: 1px solid #dddddd;
     border-radius: 3px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 0px;
 }
 
 .article-title {

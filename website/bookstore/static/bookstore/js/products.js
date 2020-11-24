@@ -53,7 +53,7 @@ const displayProductItems = items => {
                       </div>
                       <a href="#"><button type="submit" class="product__btn">Add To Cart</button></a>
                     </div>
-                  <ul>
+                  <ul class="layer">
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
