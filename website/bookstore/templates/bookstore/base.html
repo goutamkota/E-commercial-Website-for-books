@@ -11,6 +11,7 @@
 
   <!-- fontawesome goutam-->
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
@@ -23,6 +24,8 @@
 
   <!--  CSS -->
   <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}" >
+  <link rel="stylesheet" href="{% static 'bootstrap/mdb.min.css' %}" >
+  <link rel="stylesheet" href="{% static 'bootstrap/style.min.css' %}" >
   {% comment %} our main .css file link {% endcomment %}
   <link rel="stylesheet" type="text/css" href="{% static 'bookstore/css/main.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'bookstore/css/searchBar.css' %}">
@@ -33,12 +36,13 @@
   <title>Bookstore</title>
   {% endif %}
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+  {% block extra_head %}
+  {% endblock %}
+
 
 </head>
 
-<body>
+<body class="grey lighten-3">
   
   <!--NAV BAR-->
   {% include "bookstore/navbar.html" %}
@@ -56,10 +60,9 @@
         {% endif %}
       </div>
     </div>
-
-    {% block content %}
-    {% endblock %}
   </main>
+  {% block content %}
+  {% endblock %}
 
   <!-- Optional JavaScript -->
 

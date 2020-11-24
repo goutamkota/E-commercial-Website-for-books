@@ -3,6 +3,7 @@ from django.db.models.signals import post_save
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
+from django.shortcuts import reverse
 from users.models import Profile
 
 
@@ -48,6 +49,11 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("core:product", kwargs={
+            'slug': self.slug
+        })
 
 
 class OrderItem(models.Model):
